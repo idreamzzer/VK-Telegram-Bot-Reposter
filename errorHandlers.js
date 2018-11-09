@@ -14,9 +14,6 @@ module.exports = () => {
     if (!telegram.isPolling()) {
       errorMessage(`Telegram bot is NOT polling`);
       telegram.reconnectWithProxy();
-      if (!telegram.isPolling()) {
-        process.exit();
-      }
     }
   }, 5000);
 

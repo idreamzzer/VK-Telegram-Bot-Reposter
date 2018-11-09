@@ -13,7 +13,7 @@ module.exports = () => {
       const post = getPost(updates);
       if (post) {
         logMessage(`New post`);
-        logMessage(post);
+        logMessage(post.text);
         const preview = getPreviewFromPost(post);
         if (preview && preview.type && preview.url) {
           sendPostWithPreview(post, preview);
