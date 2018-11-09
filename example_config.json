@@ -17,11 +17,5 @@
     "groupId": "vk group Id",
     "groupKey": "vk group key"
   },
-  "postTags": ["some", "tags"],
-  "web": {
-    "port": 3000,
-    "username": "username",
-    "password": "password",
-    "secret": "some secret"
-  }
+  "postTags": ["&#13;", "some", "#tags"]
 }
