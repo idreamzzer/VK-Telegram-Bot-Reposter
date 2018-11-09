@@ -1,0 +1,24 @@
+{
+  "name": "tgbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
+    "jsonwebtoken": "^8.3.0",
+    "node-telegram-bot-api": "^0.30.0",
+    "node-vk-sdk": "^1.0.5",
+    "socks5-https-client": "^1.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.5"
+  }
+}

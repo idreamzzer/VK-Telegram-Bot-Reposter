@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bot Settings</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+      table {
+        border: 1px solid #444;
+      }
+    </style>
+  </head>
+  <body>
+    <div>Settings</div>
+    <pre id="config"></pre>
+
+    <script src="/js/auth.js"></script>
+    <script>
+      (async () => {
+        let logged = await auth.handleAuth();
+        console.log(logged);
+        if (logged) {
+          await getAndDisplayConfig();
+        }
+
+        async function getAndDisplayConfig() {
+          const configListElement = document.querySelector("#config-list");
+          const rawResp = await fetch("/config", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              authorization: `Bearer ${auth.getToken()}`
+            }
+          });
+          const config = await rawResp.json();
+          if (config) {
+            document.querySelector("#config").innerHTML = JSON.stringify(
+              config
+            );
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
