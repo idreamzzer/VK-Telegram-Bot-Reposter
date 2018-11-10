@@ -4,7 +4,10 @@ const {
   BotsLongPollUpdatesProvider
 } = require("node-vk-sdk");
 const config = require("../config.json");
-const { logMessage, errorMessage } = require("../helpers/logMessages");
+const {
+  logMessage,
+  errorMessage
+} = require("../helpers/logMessages");
 
 module.exports = (() => {
   const serviceApi = new VKApi({

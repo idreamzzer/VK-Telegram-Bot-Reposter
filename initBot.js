@@ -2,7 +2,10 @@ module.exports = () => {
   const vk = require("./api/vk");
   const telegram = require("./api/telegram");
   const errorHandlers = require("./errorHandlers");
-  const { logMessage, errorMessage } = require("./helpers/logMessages");
+  const {
+    logMessage,
+    errorMessage
+  } = require("./helpers/logMessages");
   const getPost = require("./helpers/getPost");
   const getPreviewFromPost = require("./helpers/getPreviewFromPost");
   const sendPostWithPreview = require("./helpers/sendPostWithPreview");

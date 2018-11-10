@@ -1,6 +1,6 @@
 {
   "telegram": {
-    "botToken": "bot token",
+    "botToken": "bot_token",
     "proxy": {
       "enable": false,
       "socks5": {
@@ -10,12 +10,12 @@
         "password": ""
       }
     },
-    "channelId": "telegram channel Id"
+    "channelId": "telegram_channel_id"
   },
   "vk": {
-    "appServiceKey": "vk app service key",
-    "groupId": "vk group Id",
-    "groupKey": "vk group key"
+    "appServiceKey": "vk_app_service_key",
+    "groupId": "vk_group_id",
+    "groupKey": "vk_group_key"
   },
-  "postTags": ["&#13;", "some", "#tags"]
+  "postTags": ["&#13;", "#tag"]
 }
