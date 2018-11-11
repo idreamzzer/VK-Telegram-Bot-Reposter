@@ -15,6 +15,7 @@
     "express-jwt": "^5.3.1",
     "jsonwebtoken": "^8.3.0",
     "node-telegram-bot-api": "^0.30.0",
+    "node-vk-bot": "^1.2.1",
     "node-vk-sdk": "^1.0.5",
     "socks5-https-client": "^1.2.1"
   },
