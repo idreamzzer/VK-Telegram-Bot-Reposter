@@ -1,36 +1,11 @@
-const {
-  VKApi,
-  ConsoleLogger,
-  BotsLongPollUpdatesProvider
-} = require("node-vk-sdk");
+const VkBot = require("node-vk-bot-api");
 const config = require("../config.json");
-const {
-  logMessage,
-  errorMessage
-} = require("../helpers/logMessages");
+const logger = require("../utils/logger");
 
 module.exports = (() => {
-  const serviceApi = new VKApi({
-    token: config.vk.appServiceKey,
-    logger: new ConsoleLogger()
+  const bot = new VkBot(config.vk.groupKey, config.vk.groupId);
+  bot.startPolling(() => {
+    logger.debug("VK bot is polling");
   });
-
-  const groupApi = new VKApi({
-    token: config.vk.groupKey,
-    logger: new ConsoleLogger()
-  });
-
-  let botLongPoll;
-  try {
-    botLongPoll = new BotsLongPollUpdatesProvider(groupApi, config.vk.groupId);
-    setTimeout(() => botLongPoll.ts && logMessage("VK polling started"), 3000);
-  } catch (err) {
-    errorMessage(`Couldn't start vk bots longpoll`);
-    errorMessage(err);
-  }
-
-  return {
-    serviceApi,
-    botLongPoll
-  };
+  return bot;
 })();

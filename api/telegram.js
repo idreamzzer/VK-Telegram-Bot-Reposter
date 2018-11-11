@@ -2,55 +2,29 @@ process.env.NTBA_FIX_319 = 1;
 const TelegramBot = require("node-telegram-bot-api");
 const Agent = require("socks5-https-client/lib/Agent");
 const config = require("../config.json");
-const {
-  logMessage,
-  errorMessage
-} = require("../helpers/logMessages");
+const logger = require("../utils/logger");
 
 module.exports = (() => {
-  let withProxy = config.telegram.proxy ? config.telegram.proxy.enable : null;
-  let telegram, botOptions, botOptionsWithProxy;
-  botOptions = {
-    polling: {
-      params: {
-        timeout: 10
-      },
-      interval: 2000
-    }
-  };
-  if (withProxy !== null) {
-    botOptionsWithProxy = {
-      polling: {
-        params: {
-          timeout: 10
-        },
-        interval: 2000
-      },
-      request: {
-        agentClass: Agent,
-        agentOptions: {
-          socksHost: config.telegram.proxy.socks5.host,
-          socksPort: config.telegram.proxy.socks5.port,
-          socksUsername: config.telegram.proxy.socks5.username,
-          socksPassword: config.telegram.proxy.socks5.password
-        }
+  let withProxy = config.telegram.proxy && config.telegram.proxy.enable;
+  let telegram;
+  let botOptions = {};
+  if (withProxy) {
+    botOptions.request = {
+      agentClass: Agent,
+      agentOptions: {
+        socksHost: config.telegram.proxy.socks5.host,
+        socksPort: config.telegram.proxy.socks5.port,
+        socksUsername: config.telegram.proxy.socks5.username,
+        socksPassword: config.telegram.proxy.socks5.password
       }
     };
   }
 
   try {
-    telegram = new TelegramBot(
-      config.telegram.botToken,
-      withProxy ? botOptionsWithProxy : botOptions
-    );
-
-    setTimeout(
-      () => telegram.isPolling() && logMessage("Telegram polling started"),
-      3000
-    );
+    telegram = new TelegramBot(config.telegram.botToken, botOptions);
   } catch (err) {
-    errorMessage("Couldn't start telegram api");
-    errorMessage(err);
+    logger.error("Couldn't start telegram api");
+    logger.error(err);
     process.exit();
   }
 

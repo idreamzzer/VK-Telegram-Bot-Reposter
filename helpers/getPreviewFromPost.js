@@ -1,7 +1,4 @@
-const {
-  logMessage,
-  errorMessage
-} = require("./logMessages");
+const logger = require("../utils/logger");
 
 module.exports = post => {
   if (!post.attachments || !post.attachments.length) return "";
@@ -25,13 +22,13 @@ module.exports = post => {
             url: doc.url
           };
         } else {
-          logMessage(`Unhandled attachment doc type extention`);
-          logMessage(doc);
+          logger.warn(`Unhandled attachment doc type extention`);
+          logger.warn(doc);
           return "";
         }
       default:
-        logMessage(`Unhandled attachment type`);
-        logMessage(attach);
+        logger.warn(`Unhandled attachment type`);
+        logger.warn(attach);
         return "";
     }
   }

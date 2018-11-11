@@ -1,24 +1,21 @@
 const telegram = require("./api/telegram");
-const {
-  logMessage,
-  errorMessage
-} = require("./helpers/logMessages");
+const logger = require("./utils/logger");
 
 module.exports = () => {
-  telegram.on("polling_error", async err => {
-    errorMessage("POLLING ERROR");
-    errorMessage(err);
-    setTimeout(() => process.exit(), 10000);
+  telegram.on("error", async err => {
+    logger.error("Unexpected error occurred");
+    logger.error(err);
+    process.exit();
   });
 
   // Restart bot on error
-  process.on("uncaughtException", function (e) {
-    errorMessage(
+  process.on("uncaughtException", function(e) {
+    logger.error(
       "An error has occured. error is: %s and stack trace is: %s",
       e,
       e.stack
     );
-    errorMessage("Process will restart now.");
+    logger.error("Process will restart now.");
     process.exit();
   });
 };

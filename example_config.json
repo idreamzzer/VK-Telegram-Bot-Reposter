@@ -13,7 +13,6 @@
     "channelId": "telegram_channel_id"
   },
   "vk": {
-    "appServiceKey": "vk_app_service_key",
     "groupId": "vk_group_id",
     "groupKey": "vk_group_key"
   },

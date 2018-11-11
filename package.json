@@ -10,13 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "express-jwt": "^5.3.1",
-    "jsonwebtoken": "^8.3.0",
+    "log4js": "^3.0.6",
     "node-telegram-bot-api": "^0.30.0",
-    "node-vk-bot": "^1.2.1",
-    "node-vk-sdk": "^1.0.5",
+    "node-vk-bot-api": "^2.1.8",
     "socks5-https-client": "^1.2.1"
   },
   "devDependencies": {
