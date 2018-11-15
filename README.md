@@ -45,6 +45,7 @@ Open any photo in group and find "...photo-[group id]-123123123..."
 - Add web ui with authorization to configure bot's settings in `config.json`
 - Add posting from telegram channel to vk group (fully synchronized in both ways)
 - Testing
+- If no tags in config then get all posts
 
 ### Few words about app logic
 
