@@ -16,5 +16,5 @@
     "groupId": "vk_group_id",
     "groupKey": "vk_group_key"
   },
-  "postTags": ["&#13;", "#test"]
+  "postTags": ["&#13;"]
 }
