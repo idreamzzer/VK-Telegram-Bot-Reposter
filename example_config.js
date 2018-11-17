@@ -1,6 +1,6 @@
 module.exports = {
   telegram: {
-    botToken: "bot_token",
+    botToken: "bot_token", // https://github.com/idreamzzer/VK-Telegram-Bot-Reposter#how-to-get-telegram-bot-token
     proxy: {
       enable: false,
       socks5: {
@@ -10,12 +10,12 @@ module.exports = {
         password: "telegram"
       }
     },
-    channelId: "telegram_channel_id"
+    channelId: "telegram_channel_id" // https://github.com/idreamzzer/VK-Telegram-Bot-Reposter#how-to-get-telegram-channel-id
   },
   vk: {
-    groupId: "vk_group_id",
-    groupKey: "vk_group_key"
+    groupId: "vk_group_id", // https://github.com/idreamzzer/VK-Telegram-Bot-Reposter#how-to-get-vk-group-id
+    groupKey: "vk_group_key" // https://github.com/idreamzzer/VK-Telegram-Bot-Reposter#how-to-get-vk-group-key
   },
-  postTags: ["&#13;", /\[.+\|.+\]/],
+  postTags: ["&#13;", /\[.+\|.+\]/], // https://github.com/idreamzzer/VK-Telegram-Bot-Reposter#some-examples-post-tags-for-bot
   removeTags: true
 };
