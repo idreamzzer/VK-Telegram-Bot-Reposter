@@ -1,4 +1,4 @@
-const config = require("../config.json");
+const config = require("../config");
 
 module.exports = post => {
   for (let tag of config.postTags) {

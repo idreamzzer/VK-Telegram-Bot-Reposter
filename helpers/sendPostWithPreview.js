@@ -1,6 +1,6 @@
 const telegram = require("../api/telegram");
 const logger = require("../utils/logger");
-const config = require("../config.json");
+const config = require("../config");
 
 module.exports = (post, preview) => {
   let text = post.text;

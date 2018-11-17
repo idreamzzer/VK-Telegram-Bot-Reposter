@@ -1,7 +1,7 @@
 process.env.NTBA_FIX_319 = 1;
 const TelegramBot = require("node-telegram-bot-api");
 const Agent = require("socks5-https-client/lib/Agent");
-const config = require("../config.json");
+const config = require("../config");
 const logger = require("../utils/logger");
 
 module.exports = (() => {

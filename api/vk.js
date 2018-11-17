@@ -1,5 +1,5 @@
 const VkBot = require("node-vk-bot-api");
-const config = require("../config.json");
+const config = require("../config");
 const logger = require("../utils/logger");
 
 module.exports = (() => {
