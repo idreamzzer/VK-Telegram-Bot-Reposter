@@ -44,7 +44,12 @@ Go to group Manage/API Usage/Access Tokens. Create token with: community managem
 
 ##### Some examples post tags for bot:
 
-"\&#13;", "#test", "#test@test", /\\[.+\\|.+\\]/ - the last one is for checking "@group (My Awesome Group)". From vk api we're getting "[club123123|My Awesome Group]"
+- "\&#13;" - invisible symbol
+- "#test"
+- "#test@group"
+- /\\[.+\\|.+\\]/ - checks for "@group (My Awesome Group)". From vk api we're getting "[club123123|My Awesome Group]"
+- /\\#.+\\@.+ / - checks for "#anytag@anygroup "
+- /\\#.+\\@my_group/ - checks for "#anytag@mygroup"
 
 ### TODO
 
