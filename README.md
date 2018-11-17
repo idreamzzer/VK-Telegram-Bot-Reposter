@@ -26,13 +26,21 @@ pm2 startup
 
 ### Tips
 
-##### To get telegram channel id:
+##### How to get telegram bot token:
+
+Find @BotFather in telegram and type /newbot. Follow instructions he given.
+
+##### How to get telegram channel id:
 
 Paste your bot token and channel @name in https://api.telegram.org/bot[bot_token]/getChat?chat_id=@[channel_name]
 
-##### To get vk group id:
+##### How to get vk group id:
 
 Open any photo in group and find "...photo-[group id]-123123123..."
+
+##### How to get vk group key:
+
+Go to group Manage/API Usage/Access Tokens. Create token with: community management and wall. Also go to Long Poll API and Enable it with latest version and enable Event type "Wall posts: New".
 
 ##### Some examples post tags for bot:
 
